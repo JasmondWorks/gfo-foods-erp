@@ -8,6 +8,8 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "GFO Foods",
   description: "Stock, production and sales for GFO Foods",
+  appleWebApp: { capable: true, title: "GFO Foods", statusBarStyle: "default" },
+  icons: { icon: "/icon.svg", apple: "/icon.svg" },
 };
 
 export const viewport: Viewport = {
@@ -15,6 +17,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   themeColor: "#b4451f",
+  // Keeps content clear of the notch and home indicator in standalone mode.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
