@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: gfo-foods-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gfo
+      POSTGRES_PASSWORD: gfo
+      POSTGRES_DB: gfo_foods
+    ports:
+      - "5435:5432"
+    volumes:
+      - gfo-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gfo -d gfo_foods"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gfo-pgdata:
