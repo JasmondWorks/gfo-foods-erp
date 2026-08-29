@@ -51,5 +51,11 @@ signup page — the single user is seeded.
 
 ## Status
 
-Phase 1 (foundation) complete: schema, migrations, seed, auth, protected shell.
-Next: Phase 2 — raw materials CRUD, products CRUD, recipe editor.
+Phases 1–2 complete:
+
+- **Phase 1** — schema, migrations, seed, auth, protected shell
+- **Phase 2** — raw materials CRUD, products CRUD, recipe editor with live cost-per-unit
+
+Next: **Phase 3, the core loop** — log purchase, new batch (the transaction in
+PROJECT_CONTEXT §9), new sale, add expense, and the dashboard with alerts.
+This is the phase that ships to her.
