@@ -51,11 +51,15 @@ signup page — the single user is seeded.
 
 ## Status
 
-Phases 1–2 complete:
+Phases 1–3 complete — **this is the shippable build**:
 
 - **Phase 1** — schema, migrations, seed, auth, protected shell
 - **Phase 2** — raw materials CRUD, products CRUD, recipe editor with live cost-per-unit
+- **Phase 3** — the core loop: log purchase, new batch, new sale, add expense,
+  and the dashboard with alerts
 
-Next: **Phase 3, the core loop** — log purchase, new batch (the transaction in
-PROJECT_CONTEXT §9), new sale, add expense, and the dashboard with alerts.
-This is the phase that ships to her.
+Per PROJECT_CONTEXT §11, **ship this and let her use it for two weeks before
+building Phase 4**. What she actually touches tells you what to build next —
+and what to delete.
+
+Phase 4 (stock count, reports, customers, settings) is deliberately not built yet.
