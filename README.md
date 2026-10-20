@@ -63,3 +63,4 @@ building Phase 4**. What she actually touches tells you what to build next —
 and what to delete.
 
 Phase 4 (stock count, reports, customers, settings) is deliberately not built yet.
+# gfo-foods-erp
