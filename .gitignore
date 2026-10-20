@@ -31,7 +31,6 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
 
 # vercel
 .vercel
@@ -41,7 +40,6 @@ yarn-error.log*
 next-env.d.ts
 
 # env
-.env
 .env*.local
 !.env.test
 
@@ -49,3 +47,7 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /e2e/.auth/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
