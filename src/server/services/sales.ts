@@ -164,6 +164,10 @@ export async function recordPayment(saleId: string, amount: string) {
     const total = new D(sale.totalAmount);
     const paid = money(new D(sale.amountPaid).plus(new D(amount)));
 
+    if (paid.greaterThan(total)) {
+      throw new Error("That payment would exceed the amount owed on this sale.");
+    }
+
     return tx.sale.update({
       where: { id: saleId },
       data: { amountPaid: paid, paymentStatus: paymentStatusFor(total, paid) },

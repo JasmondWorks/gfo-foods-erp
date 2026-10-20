@@ -159,7 +159,11 @@ export async function recordPaymentAction(
     return { ok: false, message: "Enter an amount greater than zero." };
   }
 
-  await recordPayment(saleId, amount);
+  try {
+    await recordPayment(saleId, amount);
+  } catch (error) {
+    return { ok: false, message: error instanceof Error ? error.message : "Could not record the payment." };
+  }
   revalidatePath("/");
   revalidatePath("/sales");
   revalidatePath(`/sales/${saleId}`);

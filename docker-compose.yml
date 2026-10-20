@@ -17,5 +17,23 @@ services:
       timeout: 5s
       retries: 10
 
+  test-db:
+    image: postgres:16-alpine
+    container_name: gfo-foods-test-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gfo
+      POSTGRES_PASSWORD: gfo
+      POSTGRES_DB: gfo_foods_test
+    ports:
+      - "5437:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gfo -d gfo_foods_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
 volumes:
   gfo-pgdata:
